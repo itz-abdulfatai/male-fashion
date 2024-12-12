@@ -1,37 +1,42 @@
-import { createContext } from "react"
+import { createContext, useReducer } from "react";
 
-const UserContext = createContext()
+const UserContext = createContext();
 
 const initialState = {
-    user: null,
-    isAuthenticated: false,
+  user: null,
+  isLoggedIn: true,
+  loading: false,
+  error: null,
+};
 
-  };
-
-  function reducer(state, action) {
-    switch (action.type) {
-      case "LOGIN":
-        return {
-          ...state,
-          user: action.payload, // Update the user data
-          isAuthenticated: true,
-        };
-      case "LOGOUT":
-        return {
-          ...state,
-          user: null,
-          isAuthenticated: false,
-        };
-      default:
-        throw new Error(`Unhandled action type: ${action.type}`);
-    }
+function reducer(state, action) {
+  switch (action.type) {
+    case "LOGIN":
+      return {
+        ...state,
+        user: action.payload, // Update the user data
+        isLoggedIn: true,
+      };
+    case "LOGOUT":
+      return {
+        ...state,
+        user: null,
+        isLoggedIn: false,
+      };
+    default:
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
-  
-
-export function UserContextProvider({children}) {
-
 }
 
+// eslint-disable-next-line react/prop-types
+export function UserContextProvider({ children }) {
+  const [userState, dispatch] = useReducer(reducer, initialState);
 
+  return (
+    <UserContext.Provider value={{ userState, dispatch }}>
+      {children}
+    </UserContext.Provider>
+  );
+}
 
-export default UserContext
+export default UserContext;

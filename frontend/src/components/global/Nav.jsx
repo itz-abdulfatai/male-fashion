@@ -1,6 +1,17 @@
+import { Link, useLocation } from "react-router-dom"
+import { navLinks } from "../../assets/constants"
+
 function Nav() {
+  const {pathname} = useLocation()
+  
   return (
-    <div>Nav</div>
+    <nav className=" hidden md:flex justify-center items-center gap-10 capitalize text-lg font-semibold">
+      {
+        navLinks.map((link, index) => (
+          <Link className={`hover:border-b-accent accent-hover capitalize transition-all duration-100 ease-linear border-b-2 border-solid border-primary py-1  ${pathname.includes(link.href)? 'border-b-accent': ''}`} key={ index} to={link.href}>{link.name}</Link>
+        ))
+      }
+    </nav>
   )
 }
 

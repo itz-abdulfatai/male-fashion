@@ -845,3 +845,19 @@ export const mockProducts = [
       ]
 
   }
+
+  export const navLinks = [
+    {
+        name:'Home',
+        href:'/'
+    },
+    {
+        name:'Shop',
+        href:'/shop'
+    },
+    {
+        name:'contact',
+        href:'/contact'
+    },
+    
+  ]

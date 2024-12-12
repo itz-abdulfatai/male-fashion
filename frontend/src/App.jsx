@@ -8,6 +8,7 @@ import DashLayout from "./layouts/DashLayout.jsx";
 import DashHome from "./pages/DashHome.jsx";
 
 function App() {
+  
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = (e) => {
