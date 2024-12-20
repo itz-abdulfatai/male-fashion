@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"); 
 
 @tailwind base;
 @tailwind components;
@@ -16,12 +16,28 @@
 
 
 
+
+
 @layer base {
+
+  input, textarea {
+    @apply outline-none focus:outline-none
+  }
+
+
   section {
     max-width: 1440px;
     margin: 0 auto;
     
     @apply padding-x padding-y min-h-[90vh] md:min-h-screen;
+  }
+
+  footer {
+    max-width: 1440px;
+    margin: 0 auto;
+    
+    @apply padding-x padding-y
+
   }
 }
 
@@ -38,7 +54,88 @@
     @apply hover:text-accent active:text-primary
   }
 
+  .hero {
+    background-size: 140%;
+    background-position: 50% 35%;
+    
+  }
   
+  .sml-hero {
+    background-position-x:45%;
+  }
+
+  .showcase-flex {
+    display: flex;
+    flex-direction: column;
+    @apply gap-10
+  }
+
+  .showcase-flex > div {
+    flex-direction: column-reverse;
+    @apply gap-5
+  }
+
+  .showcase-flex > div span {
+    font-size: 36px;
+  }
+
+
+  .showcase-grid {
+    display: grid;
+    
+    grid-template-columns: repeat(12 , 1fr);
+    grid-template-rows: repeat(11 , 1fr);
+    align-items: stretch;
+  }
+
+  .showcase-grid > div {
+    @apply bg-neutral flex justify-stretch items-stretch
+
+  }
+
+  .showcase-grid div:nth-child(1) .text,    .showcase-grid div:nth-child(3) .text{
+    top: 50%;
+    left: -30%;
+    z-index: 70;
+    
+  }
+
+
+  
+  .showcase-grid div .text span {
+    font-size: 36px;
+    
+  }
+
+  .showcase-grid div:nth-child(2) .text {
+    bottom: -30%;
+    
+    
+  }
+  .showcase-grid div:nth-child(1) {
+    grid-area: 1/ 7 / 6 / 12;
+
+  }
+ .showcase-grid div:nth-child(2) {
+
+  grid-area: 5 / 1 / 10 / 6;
+    
+  }
+  .showcase-grid div:nth-child(3) {
+    grid-area: 7 / 8 / 12 / 13;
+  }
+
+  .letter-space {
+    letter-spacing: 2px;
+  }
+
+  img {
+    @apply object-cover
+  }
+
+  .little-shadow {
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.048);
+  }
 }
 
 
