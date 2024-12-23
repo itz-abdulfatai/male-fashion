@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound.jsx";
 import MainLayout from "./layouts/MainLayout.jsx";
 import DashLayout from "./layouts/DashLayout.jsx";
 import DashHome from "./pages/DashHome.jsx";
+import Shop from "./pages/Shop.jsx";
 
 function App() {
   
@@ -56,6 +57,7 @@ function App() {
      {/* main layout */}
      <Route element={<MainLayout/>}>
      < Route path="/" element={<Home />}/>
+     < Route path="/shop" element={<Shop />}/>
 
      </Route>
 

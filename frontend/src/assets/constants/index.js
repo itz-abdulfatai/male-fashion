@@ -986,6 +986,20 @@ export const mockProducts = [
     }
   },
 ];
+
+export const categories = 
+[
+  { id: "category1", name: "Jeans" },
+  { id: "category2", name: "Hoodies" },
+  { id: "category3", name: "Shirts" },
+  { id: "category4", name: "T-shirts" },
+  { id: "category5", name: "Shorts" },
+  { id: "category6", name: "Accessories" },
+  { id: "category7", name: "Footwear" },
+  { id: "category8", name: "Coats" },
+  { id: "category9", name: "Jackets" },
+  { id: "category10", name: "Pants" }
+]
   
 
   export const settings = {

@@ -20,6 +20,17 @@
 
 @layer base {
 
+  .custom-select:focus {
+    outline: none; /* Remove focus outline */
+    border-color: #007bff; /* Highlight border on focus */
+  }
+  
+  .custom-select option {
+    background-color: #fff; /* Option background */
+    color: #333; /* Option text color */
+  }
+
+
   input, textarea {
     @apply outline-none focus:outline-none
   }
@@ -136,6 +147,27 @@
   .little-shadow {
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.048);
   }
+
+  .dropdown-content {
+    overflow: auto;
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+  }
+  
+  .dropdown-content.max-h-0 {
+    max-height: 0; /* Hidden */
+  }
+  
+  .dropdown-content.max-h-40 {
+    max-height: 10rem; /* Visible height */
+  }
+  
+  .dropdown-content.opacity-0 {
+    opacity: 0; /* Hidden */
+  }
+  
+  .dropdown-content.opacity-100 {
+    opacity: 1; /* Fully visible */
+  }
 }
 
 
@@ -159,7 +191,7 @@ html {
 .dark {
   --color-primary: #010409;
   --color-secondary: #ffffff;
-  --color-neutral: #000000;
+  --color-neutral: #13544e;
   /* --color-accent: #e53637; */
 }
 
@@ -346,3 +378,7 @@ html {
 .menu {
   transition: width (var(--transDur)) ease;
 }
+/* 
+h1 {
+  position: ;
+} */
