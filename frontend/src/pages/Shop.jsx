@@ -17,6 +17,9 @@ function Shop() {
   const [sort, setSort] = useState("none");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('')
+  const [activeBrand, setActiveBrand] = useState('')
+  const [activeTag, setActiveTag] = useState('')
 
   const start = (page - 1) * 9 + 1;
   const end = start + (products?.length || 0) - 1; 
@@ -73,7 +76,7 @@ function Shop() {
         setSearchLoading(true);
         setError(null);
         const response = await Axios.get(
-          `api/products?search=${searchTerm}&page=${page}&sort=${sort}`
+          `api/products?search=${searchTerm}&page=${page}&sort=${sort}&category=${activeCategory}&brand=${activeBrand}&tag=${activeTag}`
         );
         const { data } = response;
         const { products: apiProducts, totalCount } = data;
@@ -103,7 +106,11 @@ function Shop() {
       }
     }
     fetchProducts();
-  }, [searchTerm, page, sort]);
+  }, [searchTerm, page, sort,
+    activeCategory,
+    activeBrand,
+    activeTag
+  ]);
 
   return (
     <>
@@ -130,7 +137,7 @@ function Shop() {
               placeholder="Search..."
               className=" p-2 bg-transparent  flex-1 "
             />
-            <button className="  text-[#bcbcbc79] w-10 flex items-center justify-center ">
+            <span className="  text-[#bcbcbc79] w-10 flex items-center justify-center ">
               {searchLoading ? (
                 <i className="bx bx-loader-circle bx-spin bx-rotate-90"></i>
               ) : (
@@ -138,11 +145,14 @@ function Shop() {
                 <i className="bx bx-search"></i>
               )}
               {/* <i className="bx bx-search"></i> */}
-            </button>
+            </span>
           </form>
-          <SideDropDown name="categories" criteria={categories} />
-          <SideDropDown name="brands" criteria={brands} />
-          <TagDropDown name={"tags"} tags={tags} />
+          <SideDropDown name="categories" criteria={categories} setCriteria={setActiveCategory} activeCriteria={activeCategory} resetPage={setPage}
+          
+          />
+          <SideDropDown name="brands" activeCriteria={activeBrand} resetPage={setPage} criteria={brands} setCriteria={setActiveBrand}
+          />
+          <TagDropDown name={"tags"} tags={tags} resetPage={setPage} setTag={setActiveTag}  activeTag={activeTag} />
         </div>
         <div className=" flex-1 flex flex-col gap-5">
           <div className=" flex p-2 justify-between items-center">
@@ -203,31 +213,75 @@ function Shop() {
             {
              products && products.length > 1 && 
             
-            <div className="flex justify-center gap-5">
-            <button onClick={() => {
-              if (page > 1) {
-                setPage(page - 1);
-              }
-            }} className=" text-2xl w-10 aspect-square rounded-full flex items-center justify-center transition-all duration-300 ease-in-out border border-solid border-transparent hover:border-accent">
-                 <i className="bx bx-left-arrow-alt"></i>
-              </button>
-              { [...Array(Math.ceil(productCount / 9))].map((_, index) => (
-                <button
-                  key={index}
-                  className={`p-2 ${page === index + 1? "text-secondary w-10 flex justify-center items-center aspect-square rounded-full border border-solid border-accent" : ""}`}
-                  onClick={() => setPage(index + 1)}
-                > 
-                  {index + 1}
-                </button>
-              ))}
-              <button onClick={() => {
-                if (page < Math.ceil(productCount / 9)) {
-                  setPage(page + 1);
-                }
-              }} className=" text-2xl w-10 aspect-square rounded-full flex items-center justify-center transition-all duration-300 ease-in-out border border-solid border-transparent hover:border-accent">
-                 <i className="bx bx-right-arrow-alt"></i>
-              </button>
-            </div>
+             <div className="flex justify-center gap-5">
+
+             <button
+               onClick={() => {
+                 if (page > 1) {
+                   setPage(page - 1);
+                 }
+               }}
+               className="text-2xl w-10 aspect-square rounded-full flex items-center justify-center transition-all duration-300 ease-in-out border border-solid border-transparent hover:border-accent"
+             >
+               <i className="bx bx-left-arrow-alt"></i>
+             </button>
+           
+             {/* Page Numbers with Ellipsis */}
+             {[...Array(Math.ceil(productCount / 9))].map((_, index) => {
+               const currentPage = index + 1;
+               const totalPages = Math.ceil(productCount / 9);
+           
+               // Show only:
+               // 1. The first page
+               // 2. The last page
+               // 3. Pages around the current page (current, +2, -2)
+               if (
+                 currentPage === 1 ||
+                 currentPage === totalPages ||
+                 (currentPage >= page - 2 && currentPage <= page + 2)
+               ) {
+                 return (
+                   <button
+                     key={index}
+                     className={`p-2 ${
+                       page === currentPage
+                         ? "text-secondary w-10 flex justify-center items-center aspect-square rounded-full border border-solid border-accent"
+                         : ""
+                     }`}
+                     onClick={() => setPage(currentPage)}
+                   >
+                     {currentPage}
+                   </button>
+                 );
+               }
+           
+               if (
+                 (currentPage === page - 3 && page > 4) ||
+                 (currentPage === page + 3 && page < totalPages - 3)
+               ) {
+                 return (
+                   <span key={index} className="p-2 text-gray-500">
+                     ...
+                   </span>
+                 );
+               }
+           
+               return null;
+             })}
+           
+
+             <button
+               onClick={() => {
+                 if (page < Math.ceil(productCount / 9)) {
+                   setPage(page + 1);
+                 }
+               }}
+               className="text-2xl w-10 aspect-square rounded-full flex items-center justify-center transition-all duration-300 ease-in-out border border-solid border-transparent hover:border-accent"
+             >
+               <i className="bx bx-right-arrow-alt"></i>
+             </button>
+           </div>
+           
           }
           </div>
         </div>

@@ -4,7 +4,7 @@
       name: "Men's Slim Fit Jeans",
       category: "Jeans",
       subcategory: "Slim Fit",
-      brand: "Levi's",
+      brand: "Levi",
       price: 2999,
       discountPrice: 2499,
       stock: 50,
@@ -42,21 +42,199 @@
       }
     },
     {
-      _id: "product3",
-      name: "Men's White Dress Shirt",
+      _id: "product51",
+      name: "Men's Denim Jacket",
+      category: "Jackets",
+      subcategory: "Casual",
+      brand: "Levi's",
+      price: 5999,
+      discountPrice: 4999,
+      stock: 40,
+      sizes: ["S", "M", "L", "XL"],
+      color: "Blue",
+      images: [{ URL: null, deletehash: null }, { URL: null, deletehash: null }],
+      views: 180,
+      createdBy: "admin1",
+      tags: ["casual", "fashion", "denim"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 75,
+        rating: 4.5
+      }
+    },
+    {
+      _id: "product52",
+      name: "Men's Chino Pants",
+      category: "Pants",
+      brand: "Dockers",
+      price: 3499,
+      stock: 60,
+      sizes: ["30", "32", "34", "36"],
+      color: "Khaki",
+      images: [{ URL: null, deletehash: null }],
+      views: 120,
+      createdBy: "admin2",
+      tags: ["casual", "officewear"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 55,
+        rating: 4.2
+      }
+    },
+    {
+      _id: "product53",
+      name: "Men's Striped Polo Shirt",
       category: "Shirts",
-      price: 2499,
+      subcategory: "Polo",
+      brand: "Ralph Lauren",
+      price: 4499,
+      stock: 45,
+      sizes: ["S", "M", "L", "XL"],
+      color: "Navy/White",
+      images: [{ URL: null, deletehash: null }],
+      views: 95,
+      createdBy: "ceo",
+      tags: ["casual", "preppy"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 40,
+        rating: 4.3
+      }
+    },
+    {
+      _id: "product54",
+      name: "Men's Leather Loafers",
+      category: "Footwear",
+      brand: "Cole Haan",
+      price: 7999,
       stock: 30,
+      sizes: ["8", "9", "10", "11"],
+      color: "Brown",
+      images: [{ URL: null, deletehash: null }],
+      views: 110,
+      createdBy: "admin1",
+      tags: ["formal", "comfort"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 35,
+        rating: 4.6
+      }
+    },
+    {
+      _id: "product55",
+      name: "Men's Puffer Vest",
+      category: "Outerwear",
+      brand: "The North Face",
+      price: 4999,
+      discountPrice: 3999,
+      stock: 50,
+      sizes: ["S", "M", "L", "XL"],
+      color: "Black",
+      images: [{ URL: null, deletehash: null }],
+      views: 85,
+      createdBy: "admin2",
+      tags: ["outdoor", "winter"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 30,
+        rating: 4.4
+      }
+    },
+    {
+      _id: "product56",
+      name: "Men's Slim Fit Dress Pants",
+      category: "Pants",
+      subcategory: "Dress",
+      brand: "Calvin Klein",
+      price: 5499,
+      stock: 40,
+      sizes: ["30", "32", "34", "36"],
+      color: "Charcoal",
+      images: [{ URL: null, deletehash: null }],
+      views: 70,
+      createdBy: "ceo",
+      tags: ["formal", "officewear"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 25,
+        rating: 4.1
+      }
+    },
+    {
+      _id: "product57",
+      name: "Men's Graphic T-Shirt",
+      category: "T-shirts",
+      brand: "Adidas",
+      price: 1999,
+      stock: 100,
       sizes: ["S", "M", "L", "XL"],
       color: "White",
       images: [{ URL: null, deletehash: null }],
-      views: 75,
-      createdBy: "admin2",
-      tags: ["formal", "officewear"],
+      views: 150,
+      createdBy: "admin1",
+      tags: ["casual", "sportswear"],
       timestamps: { createdAt: new Date(), updatedAt: new Date() },
       review: {
         count: 60,
         rating: 4.0
+      }
+    },
+    {
+      _id: "product58",
+      name: "Men's Suede Chelsea Boots",
+      category: "Footwear",
+      brand: "Clarks",
+      price: 8999,
+      stock: 25,
+      sizes: ["8", "9", "10", "11"],
+      color: "Tan",
+      images: [{ URL: null, deletehash: null }],
+      views: 90,
+      createdBy: "admin2",
+      tags: ["casual", "fashion"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 20,
+        rating: 4.7
+      }
+    },
+    {
+      _id: "product59",
+      name: "Men's Plaid Flannel Shirt",
+      category: "Shirts",
+      subcategory: "Casual",
+      brand: "L.L.Bean",
+      price: 3999,
+      stock: 55,
+      sizes: ["S", "M", "L", "XL"],
+      color: "Red/Black",
+      images: [{ URL: null, deletehash: null }],
+      views: 80,
+      createdBy: "ceo",
+      tags: ["casual", "winter"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 45,
+        rating: 4.5
+      }
+    },
+    {
+      _id: "product60",
+      name: "Men's Swim Trunks",
+      category: "Swimwear",
+      brand: "Speedo",
+      price: 2499,
+      stock: 70,
+      sizes: ["S", "M", "L", "XL"],
+      color: "Navy",
+      images: [{ URL: null, deletehash: null }],
+      views: 60,
+      createdBy: "admin1",
+      tags: ["summer", "beach"],
+      timestamps: { createdAt: new Date(), updatedAt: new Date() },
+      review: {
+        count: 15,
+        rating: 4.2
       }
     },
     {
@@ -868,6 +1046,8 @@
       name: "Men's Grey Wool Coat",
       category: "Coats",
       price: 8999,
+      brand: 'dior',
+
       stock: 20,
       sizes: ["M", "L", "XL"],
       color: "Grey",

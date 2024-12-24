@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function TagDropDown({name, tags}) {
+function TagDropDown({name, tags, setTag, resetPage , activeTag}) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -19,11 +19,22 @@ function TagDropDown({name, tags}) {
           {
             tags?.length > 1 ? tags?.map( (tag) => {
                 return (
-                  <div key={tag} className=' hover:bg-[#757575] px-2 py-1 cursor-pointer text-sm text-secondary bg-[#bcbcbc]'>{tag}</div>
+                  <button
+                  onClick={() => {
+                    setTag(tag);
+                    resetPage(1)
+                  }}
+                  key={tag} className=' hover:bg-[#757575] px-2 py-1 cursor-pointer text-sm text-secondary bg-[#bcbcbc]'>{tag}</button>
                 )
   
             }) : <span className="px-2 py-1 text-sm text-[#bcbcbc]">nothing to see here</span>
             
+          }
+
+{
+            tags.length > 1 && activeTag != '' && (
+              <button className=' hover:bg-[#757575] px-2 py-1 cursor-pointer text-sm text-secondary bg-[#bcbcbc]' onClick={() => {setTag(''); resetPage(1)}}>none</button>
+            )
           }
           </div>
           
