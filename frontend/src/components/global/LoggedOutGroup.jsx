@@ -1,13 +1,19 @@
 // import { useState } from "react"
 
-// eslint-disable-next-line react/prop-types
+import { Link } from "react-router-dom";
+import NotificationDot from "./NotificationDot";
+
+
 function LoggedOutGroup() {
   return (
     <>
       <button className="  flex justify-stretch items-stretch" title="search">
-        <i className="bx  accent-hover bx-search-alt-2"></i>
+        <i className="bx  accent-hover bx-search"></i>
       </button>
-      <button className="   flex justify-stretch items-stretch" title="cart"><i className='bx accent-hover bxs-shopping-bag-alt' ></i></button>
+      <Link to="/shop/cart" className="  relative flex justify-stretch items-stretch" title="cart"><i className='bx accent-hover bxs-shopping-bag-alt' ></i>
+      <NotificationDot/>
+      
+      </Link>
       <button className="   flex justify-stretch items-stretch" title="login">
         <i className="bx accent-hover bx-log-in"></i>
       </button>

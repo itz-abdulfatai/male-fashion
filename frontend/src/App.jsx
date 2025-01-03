@@ -9,6 +9,7 @@ import DashHome from "./pages/DashHome.jsx";
 import Shop from "./pages/Shop.jsx";
 import Blog from "./pages/Blog.jsx";
 import Contact from "./pages/contact.jsx";
+import Cart from "./pages/Cart.jsx";
 
 function App() {
   
@@ -62,6 +63,7 @@ function App() {
      < Route path="/shop" element={<Shop />}/>
      < Route path="/blog" element={<Blog />}/>
      < Route path="/contact" element={<Contact />}/>
+     < Route path="/shop/cart" element={<Cart/>}/>
      
      
 

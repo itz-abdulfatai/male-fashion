@@ -24,14 +24,14 @@ function LocationDisplay() {
 
     <>
     {
-      link == pathname[pathname.length - 1] ? 
+      link == links[links.length - 1] ? 
 
       <span key={index} className={`text-neutral hover:text-primary capitalize transition-all duration-200 ${link === links[index] && 'text-primary'}`}>
       {link}
     </span>
       
       :
-      <Link key={index}  to={`/${links.slice(0, index + 1).join('/')}`} className={`text-neutral hover:text-primary capitalize transition-all duration-200 ${link === links[index] && 'text-primary'}`}>
+      <Link key={index}  to={`/${links.slice(0, index + 1).join('/')}`} className={`text-secondary hover:text-primary capitalize transition-all duration-200 ${link === links[index] && 'text-primary'}`}>
         {link}
       </Link>
     }

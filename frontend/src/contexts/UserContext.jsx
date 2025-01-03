@@ -4,7 +4,7 @@ const UserContext = createContext();
 
 const initialState = {
   user: null,
-  isLoggedIn: true,
+  isLoggedIn: false,
   loading: false,
   error: null,
 };
