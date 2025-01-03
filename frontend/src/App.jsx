@@ -7,6 +7,8 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import DashLayout from "./layouts/DashLayout.jsx";
 import DashHome from "./pages/DashHome.jsx";
 import Shop from "./pages/Shop.jsx";
+import Blog from "./pages/Blog.jsx";
+import Contact from "./pages/contact.jsx";
 
 function App() {
   
@@ -58,6 +60,10 @@ function App() {
      <Route element={<MainLayout/>}>
      < Route path="/" element={<Home />}/>
      < Route path="/shop" element={<Shop />}/>
+     < Route path="/blog" element={<Blog />}/>
+     < Route path="/contact" element={<Contact />}/>
+     
+     
 
      </Route>
 

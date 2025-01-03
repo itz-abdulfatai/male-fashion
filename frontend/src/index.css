@@ -140,6 +140,15 @@
     letter-spacing: 2px;
   }
 
+  .inner-contact {
+    color: #5c5c5c;
+    @apply text-sm 
+  }
+
+  .contact-h2 {
+    @apply font-bold text-2xl 
+  }
+
   img {
     @apply object-cover
   }

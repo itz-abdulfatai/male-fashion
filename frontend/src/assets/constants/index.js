@@ -1072,6 +1072,11 @@ export const categories =
         name:'contact',
         href:'/contact'
     },
+    {
+      name: 'blog',
+      href: '/blog'
+
+    }
     
   ]
 
@@ -1176,8 +1181,89 @@ export const categories =
         updatedAt: '2023-09-15T11:22:38Z'
       },
       tags: ['grooming', 'winter', 'tips']
+    },
+    {
+      _id: '6',
+      title: 'How to Build a Versatile Winter Wardrobe',
+      slug: 'build-versatile-winter-wardrobe',
+      visibility: 'public',
+      content: [
+        'para 1: Building a versatile winter wardrobe is about more than just layering clothes. It’s about choosing the right key pieces that can be mixed and matched to create a variety of outfits for any occasion.',
+        'para 2: Start with timeless items like a good wool coat, a few solid sweaters, and versatile pants that can be dressed up or down. Accessories like scarves, gloves, and hats will complete the look while keeping you warm.',
+        'para 3: Explore our guide to find out how to create a winter wardrobe that will serve you all season long and never go out of style.'
+      ],
+      author: 'ceo',
+      likes: 532,
+      views: 12800,
+      image: null,
+      timestamps: {
+        createdAt: '2023-11-01T10:12:00Z',
+        updatedAt: '2023-12-05T13:48:00Z'
+      },
+      tags: ['wardrobe', 'winter', 'fashion']
+    },
+    {
+      _id: '7',
+      title: 'The Best Fabrics for Winter Clothing',
+      slug: 'best-fabrics-winter-clothing',
+      visibility: 'public',
+      content: [
+        'para 1: The fabrics you choose for winter clothing can make or break your outfit. Some materials offer warmth and breathability, while others are perfect for layering and comfort.',
+        'para 2: Wool, cashmere, and fleece are some of the most popular fabrics for winter clothing. Learn about the benefits of each material and how to incorporate them into your wardrobe for maximum warmth and style.',
+        'para 3: Check out our guide for a deep dive into the best fabrics for winter and how to choose the right ones for your needs.'
+      ],
+      author: 'ceo',
+      likes: 600,
+      views: 14000,
+      image: null,
+      timestamps: {
+        createdAt: '2023-10-15T11:30:45Z',
+        updatedAt: '2023-11-18T15:05:00Z'
+      },
+      tags: ['fabrics', 'winter', 'clothing']
+    },
+    {
+      _id: '8',
+      title: 'Men’s Winter Skincare Routine for Glowing Skin',
+      slug: 'mens-winter-skincare-routine',
+      visibility: 'public',
+      content: [
+        'para 1: Cold winter weather can leave your skin feeling dry and dull. A proper skincare routine can help you maintain healthy, glowing skin despite the harsh elements.',
+        'para 2: Use gentle cleansers, moisturizers, and lip balms designed for winter skincare. Don’t forget to exfoliate once or twice a week to remove dead skin cells and keep your complexion fresh.',
+        'para 3: Follow our winter skincare tips to keep your skin hydrated, nourished, and glowing throughout the cold season.'
+      ],
+      author: 'ceo',
+      likes: 850,
+      views: 16400,
+      image: null,
+      timestamps: {
+        createdAt: '2023-09-25T08:20:35Z',
+        updatedAt: '2023-11-12T10:05:00Z'
+      },
+      tags: ['skincare', 'winter', 'routine']
+    },
+    {
+      _id: '9',
+      title: 'Best Winter Jackets for Every Budget',
+      slug: 'best-winter-jackets-every-budget',
+      visibility: 'public',
+      content: [
+        'para 1: Finding the right winter jacket is crucial for staying warm and stylish. Whether you’re on a tight budget or ready to invest in a high-end coat, there’s something for every price range.',
+        'para 2: From affordable options like puffer jackets to premium choices like wool blends and down coats, we’ve compiled the best winter jackets for every budget. Learn how to choose the right jacket based on your needs and style preferences.',
+        'para 3: Check out our guide to find the perfect winter jacket that combines comfort, warmth, and style without breaking the bank.'
+      ],
+      author: 'ceo',
+      likes: 1020,
+      views: 19800,
+      image: null,
+      timestamps: {
+        createdAt: '2023-11-10T10:30:12Z',
+        updatedAt: '2023-12-02T11:20:45Z'
+      },
+      tags: ['jackets', 'winter', 'budget']
     }
   ];
+  
   
   
 

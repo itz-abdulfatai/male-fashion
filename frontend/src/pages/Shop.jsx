@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Axios from "axios";
 import SideDropDown from "../components/shop/SideDropDown";
 import TagDropDown from "../components/shop/TagsDropDown";
 import Product from "../components/global/Product";
+import LocationDisplay from "../components/global/LocationDisplay";
 
 function Shop() {
   const [products, setProducts] = useState(null);
@@ -114,16 +114,12 @@ function Shop() {
 
   return (
     <>
-      <div className=" flex w-full flex-col sm:px-28 px-10 gap-4 padding-y bg-neutral  ">
-        <h1 className="font-bold text-2xl capitalize">shop</h1>
-        <div className=" flex items-center gap-2">
-          <Link to="/">Home</Link> {">"}{" "}
-          <span className=" text-[#bcbcbc] cursor-pointer">Shop</span>
-        </div>
-      </div>
 
-      <section className=" flex">
-        <div className=" md:basis-[280px]  flex flex-col justify-stretch gap-5 px-5">
+<LocationDisplay/>
+
+
+      <section className=" flex flex-col md:flex-row">
+        <div className="  md:basis-[280px]  flex flex-col justify-stretch gap-5 px-5">
           <form
             action=""
             className=" flex justify-stretch items-stretch relative border border-solid border-[#bcbcbc79] "
@@ -154,7 +150,7 @@ function Shop() {
           />
           <TagDropDown name={"tags"} tags={tags} resetPage={setPage} setTag={setActiveTag}  activeTag={activeTag} />
         </div>
-        <div className=" flex-1 flex flex-col gap-5">
+        <div className=" flex-1 flex flex-col gap-5 max-h-screen overflow-auto">
           <div className=" flex p-2 justify-between items-center">
             <span className=" text-sm ">
               Showing {start}–{end} of {productCount} results
@@ -226,7 +222,7 @@ function Shop() {
                <i className="bx bx-left-arrow-alt"></i>
              </button>
            
-             {/* Page Numbers with Ellipsis */}
+
              {[...Array(Math.ceil(productCount / 9))].map((_, index) => {
                const currentPage = index + 1;
                const totalPages = Math.ceil(productCount / 9);
