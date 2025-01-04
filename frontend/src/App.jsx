@@ -10,6 +10,7 @@ import Shop from "./pages/Shop.jsx";
 import Blog from "./pages/Blog.jsx";
 import Contact from "./pages/contact.jsx";
 import Cart from "./pages/Cart.jsx";
+import Checkout from "./pages/Checkout.jsx";
 
 function App() {
   
@@ -64,6 +65,7 @@ function App() {
      < Route path="/blog" element={<Blog />}/>
      < Route path="/contact" element={<Contact />}/>
      < Route path="/shop/cart" element={<Cart/>}/>
+     < Route path="/shop/checkout" element={<Checkout/>}/>
      
      
 

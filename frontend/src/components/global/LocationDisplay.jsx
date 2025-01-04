@@ -26,12 +26,12 @@ function LocationDisplay() {
     {
       link == links[links.length - 1] ? 
 
-      <span key={index} className={`text-neutral hover:text-primary capitalize transition-all duration-200 ${link === links[index] && 'text-primary'}`}>
+      <span key={index + Math.random()} className={`text-neutral hover:text-primary capitalize transition-all duration-200 ${link === links[index] && 'text-primary'}`}>
       {link}
     </span>
       
       :
-      <Link key={index}  to={`/${links.slice(0, index + 1).join('/')}`} className={`text-secondary hover:text-primary capitalize transition-all duration-200 ${link === links[index] && 'text-primary'}`}>
+      <Link key={index + Math.random()}  to={`/${links.slice(0, index + 1).join('/')}`} className={`text-secondary hover:text-primary capitalize transition-all duration-200 ${link === links[index] && 'text-primary'}`}>
         {link}
       </Link>
     }

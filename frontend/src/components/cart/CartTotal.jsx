@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function CartTotal() {
   return (
     <div className=" w-full  flex flex-col items-stretch gap-14 lg:w-[300px] xl:w-[360px] mt-12">
@@ -20,7 +22,7 @@ function CartTotal() {
                 <span className=" text-accent text-base font-bold">$ 169.50</span>
             </div>
 
-            <button className="  px-[10px] py-[12px] letter-space cursor-pointer bg-secondary text-primary uppercase text-sm font-bold ">Proceed to checkout</button>
+            <Link to='/shop/checkout' className="  px-[10px] py-[12px] letter-space cursor-pointer bg-secondary text-primary uppercase text-sm font-bold ">Proceed to checkout</Link>
         </div>
     </div>
   )

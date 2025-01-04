@@ -140,6 +140,32 @@
     letter-spacing: 2px;
   }
 
+  .input-group {
+    @apply w-full flex flex-col gap-5
+  }
+
+  label {
+    @apply cursor-pointer
+  }
+
+  /* .input-group label {
+    
+
+  } */
+
+  .button-border {
+    @apply border-solid border-b border-[#d7d7d7]
+  }
+
+  .input-group input[type=text] {
+    @apply h-[50px] w-full border border-solid border-[#e1e1e1] text-sm pl-[20px] bg-transparent
+    
+  }
+
+  .compulsury {
+    @apply text-accent font-bold
+  }
+
   .inner-contact {
     color: #5c5c5c;
     @apply text-sm 
@@ -200,7 +226,7 @@ html {
 .dark {
   --color-primary: #010409;
   --color-secondary: #ffffff;
-  --color-neutral: #13544e;
+  --color-neutral: #1a2e39; /*#1a2e39*/
   /* --color-accent: #e53637; */
 }
 
@@ -381,6 +407,75 @@ html {
   .theme__toggle:focus-visible {
     box-shadow: 0 0 0 0.125em var(--primary);
   }
+
+   .checkbox-wrapper-43 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+  }
+
+  .checkbox-wrapper-43 label {
+    display: inline-block;
+  }
+
+  .checkbox-wrapper-43 .check {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+  }
+  .checkbox-wrapper-43 .check:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34,50,84,0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .checkbox-wrapper-43 .check svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #d7d7d7;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+  }
+  .checkbox-wrapper-43 .check svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+  }
+  .checkbox-wrapper-43 .check svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+  }
+  .checkbox-wrapper-43 .check:hover:before {
+    opacity: 1;
+  }
+  .checkbox-wrapper-43 .check:hover svg {
+    stroke: var(--color-secondary);
+  }
+  .checkbox-wrapper-43 input[type="checkbox"]:checked + .check svg {
+    stroke: var(--color-secondary);
+  }
+  .checkbox-wrapper-43 input[type="checkbox"]:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+  }
+  .checkbox-wrapper-43 input[type="checkbox"]:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+  
 }
 
 
