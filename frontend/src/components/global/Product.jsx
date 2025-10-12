@@ -4,7 +4,7 @@ export default function Product({ product }) {
     return (
       <div className=" grow relative max-w-[250px] min-h-[260px] w-full group overflow-hidden  shadow-sm bg-cover flex flex-col items-stretch ">
         <img
-          src={product.images[0].url || "https://picsum.photos/200/300?random=1"}
+          src={product.images[0].url || `https://picsum.photos/200/${300 + Math.ceil(Math.random() * 15)}`}
           alt="product image"
           className=" h-[260px] object-cover"
         />
