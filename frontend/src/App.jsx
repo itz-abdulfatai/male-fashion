@@ -11,9 +11,9 @@ import Blog from "./pages/Blog.jsx";
 import Contact from "./pages/contact.jsx";
 import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
+import SigninPage from "./pages/SigninPage.jsx";
 
 function App() {
-  
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = (e) => {
@@ -41,12 +41,14 @@ function App() {
     }
 
     if (!theme) {
-      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const prefersDarkScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       if (prefersDarkScheme) {
-        setIsChecked(true)
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
+        setIsChecked(true);
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      }
     }
 
     setTimeout(() => {
@@ -56,40 +58,29 @@ function App() {
 
   return (
     <>
+      <Routes>
+        {/* main layout */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/shop/cart" element={<Cart />} />
+          <Route path="/shop/checkout" element={<Checkout />} />
+          <Route path="/signin" element={<SigninPage />} />
+        </Route>
 
-    <Routes>
-     {/* main layout */}
-     <Route element={<MainLayout/>}>
-     < Route path="/" element={<Home />}/>
-     < Route path="/shop" element={<Shop />}/>
-     < Route path="/blog" element={<Blog />}/>
-     < Route path="/contact" element={<Contact />}/>
-     < Route path="/shop/cart" element={<Cart/>}/>
-     < Route path="/shop/checkout" element={<Checkout/>}/>
-     
-     
+        {/* dash layout */}
 
-     </Route>
+        <Route element={<DashLayout />}>
+          <Route path="/dashboard" element={<DashHome />} />
+        </Route>
 
-     {/* dash layout */}
+        {/* routes without a layout */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
 
-     <Route element={<DashLayout/>}>
-     <Route path="/dashboard" element={<DashHome/>}/>
-
-     </Route>
-
-
-
-     {/* routes without a layout */}
-     <Route path="*" element={<NotFound />} />
-    </Routes>
-
-
-
-
-
-
-    {/* theme toggle button */}
+      {/* theme toggle button */}
       <label htmlFor="theme" className="theme">
         <span className="theme__toggle-wrap">
           <input
