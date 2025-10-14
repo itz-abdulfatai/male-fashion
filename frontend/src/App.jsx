@@ -12,6 +12,7 @@ import Contact from "./pages/contact.jsx";
 import Cart from "./pages/Cart.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import SigninPage from "./pages/SigninPage.jsx";
+import Wishlist from "./pages/WishList.jsx";
 
 function App() {
   const [isChecked, setIsChecked] = useState(false);
@@ -66,6 +67,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop/cart" element={<Cart />} />
+          <Route path="/shop/wishlist" element={<Wishlist />} />
           <Route path="/shop/checkout" element={<Checkout />} />
           <Route path="/signin" element={<SigninPage />} />
         </Route>

@@ -1061,24 +1061,23 @@ export const categories =
 
   export const navLinks = [
     {
-        name:'Home',
-        href:'/'
+      name: "Home",
+      href: "/",
     },
     {
-        name:'Shop',
-        href:'/shop'
+      name: "Shop",
+      href: "/shop",
     },
     {
-        name:'contact',
-        href:'/contact'
+      name: "contact",
+      href: "/contact",
     },
-    {
-      name: 'blog',
-      href: '/blog'
+    // {
+    //   name: 'blog',
+    //   href: '/blog'
 
-    }
-    
-  ]
+    // }
+  ];
 
 
   export const BlogPosts = [

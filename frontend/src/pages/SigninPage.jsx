@@ -68,7 +68,10 @@ export default function SignIn() {
         if (!user) return setError("User not found");
 
         if (user.password === userData.password) {
-          dispatch({ type: "LOGIN", payload: userData });
+          dispatch({
+            type: "LOGIN",
+            payload: { ...userData, name: user.name || "User" },
+          });
           setTimeout(() => {
             console.log("userstate", state);
           }, 500);
