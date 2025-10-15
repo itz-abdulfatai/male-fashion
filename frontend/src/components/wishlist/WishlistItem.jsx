@@ -4,7 +4,7 @@ import UserContext from "../../contexts/UserContext";
 function WishlistItem({ item }) {
   const { dispatch } = useContext(UserContext);
 
-  const removeFromwishlist = () => {
+  const removeFromWishlist = () => {
     console.log("remove item", item._id);
 
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: item._id });
@@ -28,7 +28,7 @@ function WishlistItem({ item }) {
 
       <div className="col-span-2 flex items-center justify-end pr-5 ">
         <button
-          onClick={removeFromwishlist}
+          onClick={removeFromWishlist}
           className=" w-10 aspect-square rounded-full bg-neutral flex justify-center items-center "
         >
           <i className="bx bx-x font-extrabold text-2xl"></i>

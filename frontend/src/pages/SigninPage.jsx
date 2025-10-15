@@ -70,7 +70,11 @@ export default function SignIn() {
         if (user.password === userData.password) {
           dispatch({
             type: "LOGIN",
-            payload: { ...userData, name: user.name || "User" },
+            payload: {
+              id: user.id,
+              name: user.name || "User",
+              email: user.email,
+            },
           });
           setTimeout(() => {
             console.log("userstate", state);

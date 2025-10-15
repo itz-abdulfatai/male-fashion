@@ -20,10 +20,10 @@ function CartItems() {
         <h3 className=" text-[16px]  uppercase font-bold col-span-2">total</h3>
       </div>
       <div className="w-full max-h-[80vh] overflow-scroll">
-        {cartItems?.length === 0 ? (
+        {!cartItems || cartItems.length === 0 ? (
           <p className=" text-center text-lg my-10">Your cart is empty.</p>
         ) : (
-          cartItems?.map((item) => <CartItem key={item.id} item={item} />)
+          cartItems.map((item) => <CartItem key={item.id} item={item} />)
         )}
       </div>
 

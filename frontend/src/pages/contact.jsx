@@ -22,27 +22,27 @@ function Contact() {
             <h1 className=" text-5xl capitalize font-bold">contact us</h1>
             <p className="inner-contact">
               As you might expect of a company that began as a high-end
-              interiors contractor, we pay strict attetion.
+              interiors contractor, we pay strict attention.
             </p>
             <div>
               <h2 className="contact-h2">America</h2>
               <p className="inner-contact">
                 195 E Parker Square Dr, Parker, CO 801{" "}
               </p>
-              <Link
+              <a
                 className="inner-contact"
                 target="_blank"
-                to="https://wa.link/w91nvu"
+                rel="noopener noreferrer"
+                href="https://wa.link/w91nvu"
               >
                 (303) 456-7890
-              </Link>
+              </a>
             </div>
 
             <div>
-              <h2 className="contact-h2"> wakanda</h2>
-              <Link className="inner-contact">
-                195 E tchala cresent Dr, Parker, CO 801{" "}
-              </Link>
+              <p className="inner-contact">
+                195 E tchala cresent Dr, Parker, CO 801
+              </p>
               <Link
                 className="inner-contact"
                 target="_blank"

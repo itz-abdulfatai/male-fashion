@@ -1069,7 +1069,7 @@ export const categories =
       href: "/shop",
     },
     {
-      name: "contact",
+      name: "Contact",
       href: "/contact",
     },
     // {

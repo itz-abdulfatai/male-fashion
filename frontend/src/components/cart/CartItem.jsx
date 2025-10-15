@@ -4,15 +4,15 @@ import UserContext from "../../contexts/UserContext";
 function CartItem({ item }) {
   const { dispatch } = useContext(UserContext);
   const addQuantity = () => {
-    console.log("add item", item._id);
+    // console.log("add item", item._id);
     dispatch({ type: "INCREASE_CART_QTY", payload: item._id });
   };
   const reduceQuantity = () => {
-    console.log("reduce item", item._id);
+    // console.log("reduce item", item._id);
     dispatch({ type: "DECREASE_CART_QTY", payload: item._id });
   };
   const removeFromCart = () => {
-    console.log("remove item", item._id);
+    // console.log("remove item", item._id);
 
     dispatch({ type: "REMOVE_FROM_CART", payload: item._id });
   };
@@ -28,8 +28,7 @@ function CartItem({ item }) {
         <div className="flex justify-center flex-col gap-3">
           <h4>{item?.name}</h4>
           {/* <h4>T-shirt Contrast Pocket</h4> */}
-          <p>${item.discountPrice || item.price}</p>
-          {/* <p>$98.49</p> */}
+          <p>${item?.discountPrice || item?.price}</p> {/* <p>$98.49</p> */}
         </div>
       </div>
       <div className="col-span-3 flex items-center  gap-5">
@@ -44,7 +43,7 @@ function CartItem({ item }) {
       </div>
       <div className="col-span-2 flex items-center">
         <span className="font-bold text-lg">
-          ${item.quantity * (item.discountPrice || item.price)}
+          ${(item?.quantity || 0) * (item?.discountPrice || item?.price || 0)}
         </span>
         {/* <span className="font-bold text-lg">$30.0</span> */}
       </div>
