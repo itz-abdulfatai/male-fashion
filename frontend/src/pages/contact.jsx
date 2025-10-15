@@ -4,17 +4,7 @@ function Contact() {
   return (
     <>
       <div className=" flex flex-col items-stretch md:gap-20 ">
-        <div className="flex justify-center">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7693927.968487424!2d25.7179386!3d61.9138602!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681cadf4b32f6dd%3A0x146d63c75a810!2sFinland!5e0!3m2!1sen!2sng!4v1735069695376!5m2!1sen!2sng"
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <section className=" flex-col gap-10 md:flex-row w-full flex  my-10 md:my-0">
+        <section className=" flex-col gap-10 md:flex-row w-full flex  my-10 md:mt-20">
           <div className="flex flex-col gap-8 w-full">
             <span className="text-accent text-sm font-bold uppercase letter-space">
               information
@@ -77,6 +67,16 @@ function Contact() {
             </button>
           </form>
         </section>
+        <div className="flex justify-center">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7693927.968487424!2d25.7179386!3d61.9138602!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681cadf4b32f6dd%3A0x146d63c75a810!2sFinland!5e0!3m2!1sen!2sng!4v1735069695376!5m2!1sen!2sng"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </>
   );

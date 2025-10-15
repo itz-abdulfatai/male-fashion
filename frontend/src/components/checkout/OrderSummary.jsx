@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import PriceSummary from "./PriceSummary";
+import UserContext from "../../contexts/UserContext";
 
 export default function OrderSummary() {
+  const { state } = useContext(UserContext);
   return (
     <div className=" w-full  flex flex-col items-stretch gap-7 lg:w-[300px] xl:w-[360px]  bg-neutral p-[30px]">
       <h3 className=" font-bold uppercase pb-[25px] text-2xl border-solid border-b border-[#d7d7d7]">
@@ -12,17 +15,10 @@ export default function OrderSummary() {
         <span>Total</span>
       </div>
       <div className=" flex flex-col gap-5 max-h-[200px] py-3  overflow-auto min-h-20">
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
-        <PriceSummary />
+        {" "}
+        {state.cart?.map((item) => (
+          <PriceSummary key={item.id} item={item} />
+        ))}
       </div>
 
       <div className="border-solid border-y border-[#d7d7d7] py-7">
@@ -66,8 +62,9 @@ export default function OrderSummary() {
           <label htmlFor="cbx-44"> paypal</label>
         </div>
 
-        <button className=" text-primary bg-secondary py-[14px] px-[30px] uppercase font-bold">place order</button>
-
+        <button className=" text-primary bg-secondary py-[14px] px-[30px] uppercase font-bold">
+          place order
+        </button>
       </div>
     </div>
   );
