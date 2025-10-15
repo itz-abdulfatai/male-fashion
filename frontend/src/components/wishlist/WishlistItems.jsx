@@ -5,7 +5,7 @@ import WishlistItem from "./WishlistItem";
 
 function WishlistItems() {
   const { state } = useContext(UserContext);
-  console.log("wishlist:", state.wishlist);
+  // console.log("wishlist:", state.wishlist);
 
   const wishlistItems = state.wishlist;
 

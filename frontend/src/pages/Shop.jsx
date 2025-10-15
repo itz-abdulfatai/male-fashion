@@ -80,6 +80,8 @@ function Shop() {
         );
         const { data } = response;
         const { products: apiProducts, totalCount } = data;
+        console.log(apiProducts);
+        
         setProducts(apiProducts);
         setProductCount(totalCount);
 
@@ -164,7 +166,7 @@ function Shop() {
               value={sort}
               onChange={ (e) => {
                 setSort(e.target.value)
-                console.log(e.target.value)
+                // console.log(e.target.value)
                 setPage(1)
               }}
                 name=""

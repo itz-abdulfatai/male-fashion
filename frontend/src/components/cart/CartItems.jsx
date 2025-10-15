@@ -4,7 +4,7 @@ import UserContext from "../../contexts/UserContext";
 
 function CartItems() {
   const { state } = useContext(UserContext);
-  console.log("cart:", state.cart);
+  // console.log("cart:", state.cart);
 
   const cartItems = state.cart;
 

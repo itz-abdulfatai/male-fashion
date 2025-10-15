@@ -5,7 +5,7 @@ function WishlistItem({ item }) {
   const { dispatch } = useContext(UserContext);
 
   const removeFromWishlist = () => {
-    console.log("remove item", item._id);
+    // console.log("remove item", item._id);
 
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: item._id });
   };

@@ -62,7 +62,7 @@ export default function SignIn() {
 
         dispatch({ type: "LOGIN", payload: userData });
         setTimeout(() => {
-          console.log("userstate", state);
+          // console.log("userstate", state);
         }, 500);
       } else {
         if (!user) return setError("User not found");
@@ -77,7 +77,7 @@ export default function SignIn() {
             },
           });
           setTimeout(() => {
-            console.log("userstate", state);
+            // console.log("userstate", state);
           }, 500);
         } else {
           setError("Invalid password");

@@ -92,7 +92,7 @@ export function UserContextProvider({ children }) {
 
       if (stored)
         dispatch({ type: "LOAD_FROM_STORAGE", payload: JSON.parse(stored) });
-      console.log(JSON.parse(stored));
+      // console.log(JSON.parse(stored));
     } catch (err) {
       console.error("Error parsing userState from storage:", err);
     }
@@ -112,7 +112,7 @@ export function UserContextProvider({ children }) {
     }
 
     if (state.isLoggedIn || state.user) {
-      console.log("Auto-saving user state:", state);
+      // console.log("Auto-saving user state:", state);
       localStorage.setItem("userState", JSON.stringify(state));
     }
   }, [state]);

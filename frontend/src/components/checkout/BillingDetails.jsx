@@ -1,13 +1,4 @@
-import { useContext } from "react";
-import UserContext from "../../contexts/UserContext";
-
 function BillingDetails() {
-  const { state } = useContext(UserContext);
-  console.log(state);
-
-  // if (state.user) {
-  //   return <div>user dey</div>;
-  // } else
   return (
     <div className="flex-1 flex flex-col items-stretch  ">
       <div className=" text-sm  p-5 border-t-2 border-[#77b527] flex items-center gap-6 border-solid bg-neutral">
@@ -132,8 +123,8 @@ function BillingDetails() {
 
 export default BillingDetails;
 
-
-{/* <div class="checkbox-wrapper-43">
+{
+  /* <div class="checkbox-wrapper-43">
   <input type="checkbox" id="cbx-43">
   <label for="cbx-43" class="check">
     <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -141,7 +132,8 @@ export default BillingDetails;
       <polyline points="1 9 7 14 15 4"></polyline>
     </svg>
   </label>
-</div> */}
+</div> */
+}
 
 // <style>
 //   .checkbox-wrapper-43 input[type="checkbox"] {
