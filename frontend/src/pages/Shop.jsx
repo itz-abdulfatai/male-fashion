@@ -70,20 +70,22 @@ function Shop() {
       return Array.from(tags);
     }
 
+    const baseUrl = "https://male-fashion-1ihm.onrender.com";
+
     async function fetchProducts() {
       try {
         setLoading(true);
         setSearchLoading(true);
         setError(null);
         const response = await Axios.get(
-          `api/products?search=${searchTerm}&page=${page}&sort=${sort}&category=${activeCategory}&brand=${activeBrand}&tag=${activeTag}`
+          `${baseUrl}/products?search=${searchTerm}&page=${page}&sort=${sort}&category=${activeCategory}&brand=${activeBrand}&tag=${activeTag}`
         );
         const { data } = response;
         const { products: apiProducts, totalCount } = data;
-        console.log("API Response:", response);
-        console.log("API data:", data);
-        console.log("API Products:", apiProducts);
-        
+        // console.log("API Response:", response);
+        // console.log("API data:", data);
+        // console.log("API Products:", apiProducts);
+
         setProducts(apiProducts);
         setProductCount(totalCount);
 
