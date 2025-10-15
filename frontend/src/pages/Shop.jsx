@@ -80,7 +80,9 @@ function Shop() {
         );
         const { data } = response;
         const { products: apiProducts, totalCount } = data;
-        console.log(apiProducts);
+        console.log("API Response:", response);
+        console.log("API data:", data);
+        console.log("API Products:", apiProducts);
         
         setProducts(apiProducts);
         setProductCount(totalCount);
