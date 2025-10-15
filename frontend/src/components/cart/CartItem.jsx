@@ -20,7 +20,7 @@ function CartItem({ item }) {
     <div className="grid grid-cols-12 w-full py-7 border-b border-solid border-[#f0f0f0]">
       <div className="col-span-5 flex-col md:flex-row flex gap-8 md:items-center ">
         <img
-          src={item?.images[0]?.URL || "https://picsum.photos/200/300?random=1"}
+          src={item?.images[0]?.URL || "https://picsum.photos/200/300"}
           className=" w-[86px] h-[90px]"
           alt=""
         />
